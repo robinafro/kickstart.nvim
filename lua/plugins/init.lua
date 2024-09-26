@@ -524,6 +524,15 @@ return {
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+},
+
+
   { import = 'plugins.ui' },
-  { import = 'plugins.debug' }
+  { import = 'plugins.debug' },
+  { import = 'plugins.editing' },
 }
