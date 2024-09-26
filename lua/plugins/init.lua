@@ -682,13 +682,14 @@ return {
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
-  { -- Notifications
-    'rcarriga/nvim-notify',
-    event = 'VimEnter',
-    config = function()
-      -- You can configure the notifications here.
-      --  See `:help notify-configuration` for more information
-      vim.notify = require('notify')
-    end,
-  },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+      }
+  }
 }
