@@ -525,4 +525,5 @@ return {
   },
 
   { import = 'plugins.ui' },
+  { import = 'plugins.debug' }
 }

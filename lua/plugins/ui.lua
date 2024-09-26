@@ -26,6 +26,28 @@ return {
   },
 
   {
+    'akinsho/toggleterm.nvim',
+    keys = {
+      { '<leader>tt', '<cmd>ToggleTerm<CR>', { desc = '[T]oggle [T]erminal' } },
+    },
+    config = function()
+      require('toggleterm').setup {
+        size = 10,
+        open_mapping = [[<c-\>]],
+        hide_numbers = true,
+        shade_filetypes = {},
+        shade_terminals = true,
+        start_in_insert = true,
+        insert_mappings = true,
+        persist_size = true,
+        direction = 'horizontal',
+        close_on_exit = true,
+        shell = vim.o.shell,
+      }
+    end,
+  },
+
+  {
     'nvim-tree/nvim-tree.lua',
     event = 'VeryLazy',
     keys = {
@@ -80,6 +102,11 @@ return {
 
   {
     "rest-nvim/rest.nvim",
+    keys = {
+      { '<leader>tr', '<cmd>Rest open<CR>', { desc = '[T]oggle [R]est' } },
+      { '<leader>rr', '<cmd>Rest run<CR>', { desc = '[R]un [R]est' } },
+      { '<leader>rl', '<cmd>Rest last<CR>', { desc = '[R]un [L]ast' } },
+    },
   },
 
   { -- Fuzzy Finder (files, lsp, etc)
@@ -239,6 +266,45 @@ return {
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
+  },
+
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        theme = 'hyper',
+    config = {
+      week_header = {
+       enable = true,
+      },
+      shortcut = {
+        { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+        {
+          icon = ' ',
+          icon_hl = '@variable',
+          desc = 'Files',
+          group = 'Label',
+          action = 'Telescope find_files',
+          key = 'f',
+        },
+        {
+          desc = ' Apps',
+          group = 'DiagnosticHint',
+          action = 'Telescope app',
+          key = 'a',
+        },
+        {
+          desc = ' dotfiles',
+          group = 'Number',
+          action = 'Telescope dotfiles',
+          key = 'd',
+        },
+      },
+    },
+      }
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
   },
 }
 
