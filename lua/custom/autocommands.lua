@@ -13,10 +13,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Format HTML tags when pressing Enter
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'html',
-  callback = function()
-    vim.api.nvim_buf_set_keymap(0, 'i', '<CR>', '<CR><ESC>O', { noremap = false, silent = true })
-  end,
-})
-
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'html',
+--   callback = function()
+--     vim.api.nvim_buf_set_keymap(0, 'i', '<CR>', '<CR><ESC>O', { noremap = false, silent = true })
+--   end,
+-- })
