@@ -1,27 +1,46 @@
 return {
   {
-    "folke/noice.nvim",
-    event = "VeryLazy",
+    'folke/noice.nvim',
+    event = 'VeryLazy',
     opts = {},
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-      }
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    },
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
-    event = "VeryLazy",
+    'akinsho/bufferline.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    event = 'VeryLazy',
+    config = function()
+      require('bufferline').setup {
+        options = {
+          diagnostics = 'nvim_lsp',
+          mappings = true,
+        },
+      }
+    end,
+  },
+
+  {
+    'nvim-tree/nvim-tree.lua',
+    event = 'VeryLazy',
     keys = {
-        { "<leader>te", ":NvimTreeToggle<CR>", { desc = "[T]oggle [E]xplorer", silent = true }}
+      { '<leader>te', ':NvimTreeToggle<CR>', { desc = '[T]oggle [E]xplorer', silent = true } },
     },
     config = function()
-      require("nvim-tree").setup({
+      require('nvim-tree').setup {
         disable_netrw = true,
         hijack_netrw = true,
         auto_close = true,
         open_on_tab = true,
         hijack_cursor = false,
+        diagnostics = {
+          enable = true,
+        },
         update_focused_file = {
           enable = true,
           update_cwd = false,
@@ -33,33 +52,33 @@ return {
         },
         view = {
           width = 30,
-          side = "left",
+          side = 'left',
         },
-      })
+      }
     end,
   },
 
   {
-    "kdheepak/lazygit.nvim",
+    'kdheepak/lazygit.nvim',
     cmd = {
-        "LazyGit",
-        "LazyGitConfig",
-        "LazyGitCurrentFile",
-        "LazyGitFilter",
-        "LazyGitFilterCurrentFile",
+      'LazyGit',
+      'LazyGitConfig',
+      'LazyGitCurrentFile',
+      'LazyGitFilter',
+      'LazyGitFilterCurrentFile',
     },
     -- optional for floating window border decoration
     dependencies = {
-        "nvim-lua/plenary.nvim",
+      'nvim-lua/plenary.nvim',
     },
     -- setting the keybinding for LazyGit with 'keys' is recommended in
     -- order to load the plugin when the command is run for the first time
     keys = {
-        { "<leader>tg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-    }
+      { '<leader>tg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+    },
   },
 
-{ -- Fuzzy Finder (files, lsp, etc)
+  { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
     branch = '0.1.x',
@@ -164,7 +183,7 @@ return {
     end,
   },
 
- { -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -218,3 +237,4 @@ return {
     },
   },
 }
+

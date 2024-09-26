@@ -524,5 +524,5 @@ return {
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
-  { import = 'plugins.ui' }
+  { import = 'plugins.ui' },
 }
