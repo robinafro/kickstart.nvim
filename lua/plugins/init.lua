@@ -526,11 +526,13 @@ return {
   },
 
   {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
+    'robinafro/live-preview.nvim',
+    dependencies = { 'brianhuster/autosave.nvim' }, -- Not required, but recomended for autosaving
+    keys = {
+      { '<leader>tp', '<cmd>LivePreview<CR>', desc = '[T]oggle [P]review' },
+    },
+    config = function()
+      require('live-preview').setup {}
     end,
   },
 

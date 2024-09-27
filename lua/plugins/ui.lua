@@ -28,7 +28,7 @@ return {
   {
     'akinsho/toggleterm.nvim',
     keys = {
-      { '<leader>tt', '<cmd>ToggleTerm<CR>', { desc = '[T]oggle [T]erminal' } },
+      { '<leader>tt', '<cmd>ToggleTerm<CR>', desc = '[T]oggle [T]erminal' },
     },
     config = function()
       require('toggleterm').setup {
@@ -50,7 +50,7 @@ return {
     'nvim-tree/nvim-tree.lua',
     event = 'VeryLazy',
     keys = {
-      { '<leader>te', ':NvimTreeToggle<CR>', { desc = '[T]oggle [E]xplorer', silent = true } },
+      { '<leader>te', ':NvimTreeToggle<CR>', desc = '[T]oggle [E]xplorer', silent = true },
     },
     config = function()
       require('nvim-tree').setup {
@@ -102,9 +102,9 @@ return {
   {
     'rest-nvim/rest.nvim',
     keys = {
-      { '<leader>tr', '<cmd>Rest open<CR>', { desc = '[T]oggle [R]est' } },
-      { '<leader>rr', '<cmd>Rest run<CR>', { desc = '[R]un [R]est' } },
-      { '<leader>rl', '<cmd>Rest last<CR>', { desc = '[R]un [L]ast' } },
+      { '<leader>tr', '<cmd>Rest open<CR>', desc = '[T]oggle [R]est' },
+      { '<leader>rr', '<cmd>Rest run<CR>', desc = '[R]un [R]est' },
+      { '<leader>rl', '<cmd>Rest last<CR>', desc = '[R]un [L]ast' },
     },
   },
 

@@ -75,3 +75,7 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- No timeout for key sequences
+vim.o.timeoutlen = 0
+
