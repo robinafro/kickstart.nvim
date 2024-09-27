@@ -10,22 +10,6 @@ return {
   },
 
   {
-    'akinsho/bufferline.nvim',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    event = 'VeryLazy',
-    config = function()
-      require('bufferline').setup {
-        options = {
-          diagnostics = 'nvim_lsp',
-          mappings = true,
-        },
-      }
-    end,
-  },
-
-  {
     'akinsho/toggleterm.nvim',
     keys = {
       { '<leader>tt', '<cmd>ToggleTerm<CR>', desc = '[T]oggle [T]erminal' },
